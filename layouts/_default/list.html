@@ -3,7 +3,7 @@
 <section class="section-sm">
   <div class="container">
     <div class="text-center">
-      <h1 class="text-center display-3">Items are showing from {{.Title}}</h1>
+      <h1 class="text-center display-3">Blog</h1>
     </div>
   </div>
 </section>
@@ -11,12 +11,12 @@
 <section class="section pt-0">
   <div class="container-fluid">
     <div class="row">
-      {{ $paginator := .Paginate (where .Data.Pages "Section" "post") }}
+      {{ $paginator := .Paginate (where .Data.Pages "Section" "blog") }}
       {{ range $index,$elements:= $paginator.Pages }}
       {{ if eq $index 0}}
       <div class="col-12 mb-4">
         <div class="post">
-          <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">
+          <img src="{{ .Params.Image | absURL }}" class="img-fluid img-blog w-100" alt="{{ .Title }}">
           <div class="post-content">
             <div class="post-date">
               <span>{{ .PublishDate.Format "02" }}</span>
